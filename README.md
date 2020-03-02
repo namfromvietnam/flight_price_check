@@ -16,6 +16,7 @@ Start by modifying the config.yml to fit your need:
 - Python 3.6
 - Pyyaml
 - Selenium
+- chromedriver (sudo apt install chromedriver)
 
 ## Run
 
