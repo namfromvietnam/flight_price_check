@@ -1,0 +1,9 @@
+period:
+    start: 2020-12-01
+    end: 2020-12-30
+holidays:
+    - 2020-12-24
+    - 2020-12-25
+origin: Montreal
+destination: Ho Chi Minh City
+vacation_days: 13
