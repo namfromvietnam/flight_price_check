@@ -143,8 +143,12 @@ class GoogleFlights():
     def get_cheapest_price(self, from_date, to_date):
         current_price = WebDriverWait(self.driver, 20).until(ec.visibility_of_element_located((By.XPATH, xpath['cheapest']))).text
         self._set_date(from_date, to_date)
+        wait_cnt = 0
         while current_price == WebDriverWait(self.driver, 20).until(ec.visibility_of_element_located((By.XPATH, xpath['cheapest']))).text:
             sleep(0.1)
+            wait_cnt += 1
+            if wait_cnt >= 20:
+                break
         cheapest = WebDriverWait(self.driver, 20).until(ec.visibility_of_element_located((By.XPATH, xpath['cheapest'])))
         if cheapest.text.startswith('$'):
             return int(cheapest.text[1:].replace(',', ''))
